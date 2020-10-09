@@ -1,0 +1,32 @@
+
+<%= form_for @user,:html => {:multipart => true} do |f| %>
+
+
+    <%= f.label :avatar, "Upload Avatar: " %>
+    <%= f.file_field :avatar%>
+
+
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :username, "Name sign-up:" %>
+    <%= f.text_field :username %><br>
+
+    <%= f.label :email, "Email:" %>
+    <%= f.text_field :email %><br>
+
+    <%= f.label :bio, "Hobby: " %>
+    <%= f.text_field :bio %><br>
+
+    <%= f.label :phone, "Phone: " %>
+    <%= f.text_field :phone %><br>
+
+    <%= f.label :gender, "Gender: " %>
+    <%= f.text_field :gender %><br>
+
+    <%= f.label :website, "Facebook: " %>
+    <%= f.text_field :website %><br>
+
+
+    <%= f.submit %>
+<% end %>

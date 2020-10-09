@@ -1,0 +1,32 @@
+<%= link_to  "New Post", new_post_path %>
+
+
+
+<div class="posts">
+  <% @posts.each do |post| %>
+    <section class="post">
+      <!-- post view -->
+      <div class="user">
+        <div class="avatar">
+            <%= image_tag @users.avatar_url.to_s %>
+        </div>
+        <div class="username">
+            <%= post.user.username %>
+        </div>
+        </div>
+        <%= image_tag post.image, class: 'main-image' %>
+        <div class="description">
+         <%= post.description %>
+        </div>
+    </section>
+  <% end %>
+</div>
+
+
+
+
+
+<% if !user_signed_in?%>
+    <%= link_to  "Sign in", new_user_session_path, class:"btn btn-primary" %>
+    <%= link_to  "Sign up", new_user_registration_path, class:"btn btn-primary" %>
+<% end %>
