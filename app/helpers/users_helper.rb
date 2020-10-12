@@ -1,6 +1,6 @@
 module UsersHelper
     
-    def check_filed?
+    def check_field?
         !current_user.username.nil?
     end
 end

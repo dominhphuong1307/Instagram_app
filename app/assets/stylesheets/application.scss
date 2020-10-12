@@ -20,8 +20,19 @@ body {
         padding-left: 15px;
     }
     i.fa {
+        width: 30px;
+        height: 30px;
         font-size: 22px;
         color: #000000d4;
+    }
+    a.avatar-nav img {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
     }
 }
 

@@ -1,4 +1,17 @@
-<%= link_to  "New Post", new_post_path %>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+      <%= link_to  "New Post", new_post_path %><br>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+
+<!-- <% if !user_signed_in?%>
+<div style="text-align:center">
+    <%= link_to  "Sign in", new_user_session_path, class:"btn btn-primary" %>
+    <%= link_to  "Sign up", new_user_registration_path, class:"btn btn-primary" %>
+<% end %> -->
 
 
 
@@ -16,7 +29,8 @@
         </div>
         <%= image_tag post.image, class: 'main-image' %>
         <div class="description">
-         <%= post.description %>
+         <%= post.description %><br>
+         <em class="time-detail" style="font-size:15px">Post in: <%= post.created_at.mday %> / <%= post.created_at.month %> / <%= post.created_at.year %></em>
         </div>
     </section>
   <% end %>
@@ -26,7 +40,4 @@
 
 
 
-<% if !user_signed_in?%>
-    <%= link_to  "Sign in", new_user_session_path, class:"btn btn-primary" %>
-    <%= link_to  "Sign up", new_user_registration_path, class:"btn btn-primary" %>
-<% end %>
+

@@ -4,6 +4,7 @@
     <title>Instagram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag '/images/logo-instagram.png' %>
     <%# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,7 +16,7 @@
       <div class="container">
         <div class="logo">
           <a class="navbar-brand" href="<%= root_path%>">
-            <%= fa_stacked_icon "camera inverse", base: "circle"%>
+            <i class="fa fa-instagram"></i>
             Instagram
           </a>
         </div>
@@ -25,6 +26,9 @@
           </form>
         </div>
         <div class="user-section">
+           <% if user_signed_in? %>
+              <a class="avatar-nav" href = "<%= user_path(current_user)%>"><%= image_tag current_user.avatar_url.to_s%></a>
+           <% end %>
           <a><i class="fa fa-compass"></i></a>
           <a><i class="fa fa-heart"></i></a>
           <% if user_signed_in?%>

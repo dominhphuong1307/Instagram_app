@@ -52,14 +52,12 @@
   </a>
 </div>
 
-
 <div class="user-images">
   <% @posts.each do |post|%>
     <div class="wrapper">
-      <%=image_tag post.image %>
+      <%=link_to post_path(post) do %>
+        <%=image_tag post.image %>
+      <% end %>
     </div>
   <% end %>
-   <ul class="posts">
-    <li><span><%= @posts.count %></span> posts</li>
-  </ul>
 </div>
