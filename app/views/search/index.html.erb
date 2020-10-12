@@ -1,0 +1,21 @@
+
+
+<div class="search-page">
+  <% if @posts.exists? %>
+    <h1>Top Posts</h1>
+    <div class="user-images">
+        <% @posts.each do |post|%>
+            <div class="wrapper">
+                <%= link_to  post_path(post) do %>
+                <%=image_tag post.image %>
+        <% end %>
+    </div>
+    <% end %>
+  </div>
+  <% else %>
+    <h1>No matching posts!</h1>
+  <% end %>
+  
+  
+ 
+</div>

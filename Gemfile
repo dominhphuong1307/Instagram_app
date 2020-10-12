@@ -27,6 +27,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails', '~> 4.4'
 gem  'carrierwave' 
 gem 'font-awesome-rails'
+gem 'pry'
 
 # gem 'devise-bootstrap-views'
 # Use Active Storage variant

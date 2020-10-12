@@ -28,9 +28,18 @@
         </div>
         </div>
         <%= image_tag post.image, class: 'main-image' %>
+
         <div class="description">
-         <%= post.description %><br>
+        <% post.description.to_s.split(' ').each do |word| %>
+          <% if word.start_with?('#') %>
+            <%= link_to word, search_index_path(query: word) %>
+          <%else %>
+            <%= word %>
+          <%end %>
+        <% end %>
+        <div class="time-upload">
          <em class="time-detail" style="font-size:15px">Post in: <%= post.created_at.mday %> / <%= post.created_at.month %> / <%= post.created_at.year %></em>
+        </div>
         </div>
     </section>
   <% end %>
