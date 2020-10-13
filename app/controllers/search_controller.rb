@@ -4,7 +4,6 @@ class SearchController < ApplicationController
       query = params[:query].gsub(/[#]/,'')
       # @posts = Post.joins(:hash_tag).where(hash_tags: {name: query})
       @posts = Post.where("description like ?", "%#{params[:query]}%")
-      byebug
     else 
       @posts = Post.where("description like ?", "%#{params[:query]}%")
     end

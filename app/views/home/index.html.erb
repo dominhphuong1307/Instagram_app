@@ -12,22 +12,37 @@
     <%= link_to  "Sign in", new_user_session_path, class:"btn btn-primary" %>
     <%= link_to  "Sign up", new_user_registration_path, class:"btn btn-primary" %>
 <% end %> -->
+<div class="container">
+<div class="new-post">
+    <% @posts.each do |post|%>
+      <%= link_to post_path(post) do %>
+          <%= image_tag post.image %>
+      <% end %>
+    <% end %>
+</div>
+</div>
 
 
 
 <div class="posts">
   <% @posts.each do |post| %>
+
     <section class="post">
       <!-- post view -->
       <div class="user">
         <div class="avatar">
+        <%=link_to user_path(@users) do %>
             <%= image_tag @users.avatar_url.to_s %>
+        
         </div>
         <div class="username">
             <%= post.user.username %>
         </div>
+        <% end %>
         </div>
-        <%= image_tag post.image, class: 'main-image' %>
+        <%= link_to post_path(post) do %>
+          <%= image_tag post.image, class: 'main-image' %>
+        <%end%>
 
         <div class="description">
         <% post.description.to_s.split(' ').each do |word| %>
@@ -36,7 +51,9 @@
           <%else %>
             <%= word %>
           <%end %>
+
         <% end %>
+
         <div class="time-upload">
          <em class="time-detail" style="font-size:15px">Post in: <%= post.created_at.mday %> / <%= post.created_at.month %> / <%= post.created_at.year %></em>
         </div>
